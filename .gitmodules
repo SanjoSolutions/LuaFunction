@@ -1,0 +1,6 @@
+[submodule "Array"]
+	path = Array
+	url = https://github.com/SanjoSolutions/LuaArray.git
+[submodule "Object"]
+	path = Object
+	url = https://github.com/SanjoSolutions/LuaObject.git
