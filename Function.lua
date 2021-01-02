@@ -25,7 +25,12 @@ local function curry(fn, numberOfParameters)
     return curriedFunction
 end
 
+local function noOperation()
+
+end
+
 Function = {
     partial = partial,
-    curry = curry
+    curry = curry,
+    noOperation = noOperation
 }
