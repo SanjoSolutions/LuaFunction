@@ -7,6 +7,12 @@ local function partial(fn, ...)
 end
 
 local function curry(fn, numberOfParameters)
+    local numberOfParametersType = type(numberOfParameters)
+    if numberOfParametersType ~= 'number' then
+        print('Invalid argument: numberOfParameters. ' .. numberOfParametersType .. ' given instead of number.')
+        return
+    end
+
     local numberOfParametersPassed = 0
     local arguments = {}
 
