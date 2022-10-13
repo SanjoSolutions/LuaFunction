@@ -35,8 +35,13 @@ local function noOperation()
 
 end
 
+local function identity(value)
+    return value
+end
+
 Function = {
     partial = partial,
     curry = curry,
-    noOperation = noOperation
+    noOperation = noOperation,
+    identity = identity
 }
