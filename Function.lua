@@ -39,9 +39,14 @@ local function identity(value)
     return value
 end
 
+local function alwaysTrue()
+    return true
+end
+
 Function = {
     partial = partial,
     curry = curry,
     noOperation = noOperation,
-    identity = identity
+    identity = identity,
+    alwaysTrue = alwaysTrue
 }
