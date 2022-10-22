@@ -43,10 +43,15 @@ local function alwaysTrue()
     return true
 end
 
+local function isTrue(value)
+    return not not value
+end
+
 Function = {
     partial = partial,
     curry = curry,
     noOperation = noOperation,
     identity = identity,
-    alwaysTrue = alwaysTrue
+    alwaysTrue = alwaysTrue,
+    isTrue = isTrue
 }
