@@ -1,5 +1,5 @@
 ## Title: Function
-## Interface: 100000
+## Interface: 30400
 ## Dependencies: Array
 
 Function.lua
