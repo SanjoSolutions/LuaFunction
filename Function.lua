@@ -47,11 +47,18 @@ local function isTrue(value)
     return not not value
 end
 
+local function returnValue(value)
+  return function ()
+    return value
+  end
+end
+
 Function = {
     partial = partial,
     curry = curry,
     noOperation = noOperation,
     identity = identity,
     alwaysTrue = alwaysTrue,
-    isTrue = isTrue
+    isTrue = isTrue,
+    returnValue = returnValue
 }
