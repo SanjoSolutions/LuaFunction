@@ -53,6 +53,16 @@ local function returnValue(value)
   end
 end
 
+local function once(fn)
+  local hasBeenRun = false
+  return function (...)
+    if not hasBeenRun then
+      hasBeenRun = true
+      return fn(...)
+    end
+  end
+end
+
 Function = {
     partial = partial,
     curry = curry,
@@ -60,5 +70,6 @@ Function = {
     identity = identity,
     alwaysTrue = alwaysTrue,
     isTrue = isTrue,
-    returnValue = returnValue
+    returnValue = returnValue,
+    once = once
 }
