@@ -1,8 +1,7 @@
 local function partial(fn, ...)
     local partialArguments = {...}
     return function (...)
-        local arguments = Array.concat(partialArguments, {...})
-        return fn(unpack(arguments))
+        return fn(unpack(partialArguments), ...)
     end
 end
 
