@@ -1,6 +1,5 @@
-require('Array/Array')
-require('Object/Object')
-require('Testing/Testing')
+require('libs/Array/Array')
+require('libs/Testing/Testing')
 require('Function')
 
 local expect = Testing.expect

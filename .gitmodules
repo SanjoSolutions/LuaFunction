@@ -1,9 +1,9 @@
-[submodule "Array"]
-	path = Array
+[submodule "libs/Array"]
+	path = libs/Array
 	url = https://github.com/SanjoSolutions/LuaArray.git
-[submodule "Object"]
-	path = Object
-	url = https://github.com/SanjoSolutions/LuaObject.git
-[submodule "Testing"]
-	path = Testing
+[submodule "libs/Library"]
+	path = libs/Library
+	url = https://github.com/SanjoSolutions/Library.git
+[submodule "libs/Testing"]
+	path = libs/Testing
 	url = https://github.com/SanjoSolutions/LuaTesting.git
