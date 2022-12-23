@@ -1,6 +1,5 @@
 ## Title: Function
 ## Interface: 100002
 ## Dependencies: Array
-## Version: 1.0.0
 
-Function.xml
+Function.lua
