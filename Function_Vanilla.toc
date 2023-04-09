@@ -1,5 +1,6 @@
 ## Title: Function
 ## Interface: 11403
 ## Dependencies: Array
+## Version: 1.0.0
 
 Function.lua
