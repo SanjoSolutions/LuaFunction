@@ -1,7 +1,6 @@
 ## Title: Function
 ## Interface: 100007
-## Dependencies: Array
 ## Version: 1.0.0
-## OptionalDeps: Library
+## OptionalDeps: Library, Array
 
 Function.lua

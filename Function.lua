@@ -2,6 +2,14 @@ local addOnName = 'Function'
 local version = '1.0.0'
 
 if (_G.Library and not Library.isRegistered(addOnName, version)) or not _G.Library then
+  local Array
+
+  if _G.Library then
+    Array = Library.retrieve('Array', '^1.0.0')
+  else
+    Array = _G.Array
+  end
+
   --- @class Function
   local Function = {}
 
