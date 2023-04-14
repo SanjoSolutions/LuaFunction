@@ -1,79 +1,75 @@
-local function partial(fn, ...)
-  local partialArguments = { ... }
-  return function(...)
-    return fn(unpack(partialArguments), ...)
-  end
-end
+local addOnName = 'Function'
+local version = '1.0.0'
 
-local function curry(fn, numberOfParameters)
-  local numberOfParametersType = type(numberOfParameters)
-  if numberOfParametersType ~= 'number' then
-    print('Invalid argument: numberOfParameters. ' .. numberOfParametersType .. ' given instead of number.')
-    return
-  end
+if (_G.Library and not Library.isRegistered(addOnName, version)) or not _G.Library then
+  --- @class Function
+  local Function = {}
 
-  local numberOfParametersPassed = 0
-  local arguments = {}
-
-  local curriedFunction
-  curriedFunction = function(...)
-    local passedArguments = { ... }
-    numberOfParametersPassed = numberOfParametersPassed + #passedArguments
-    Array.append(arguments, passedArguments)
-    if numberOfParametersPassed == numberOfParameters then
-      return fn(unpack(arguments))
-    else
-      return curriedFunction
+  function Function.partial(fn, ...)
+    local partialArguments = { ... }
+    return function(...)
+      return fn(unpack(partialArguments), ...)
     end
   end
 
-  return curriedFunction
-end
+  function Function.curry(fn, numberOfParameters)
+    local numberOfParametersType = type(numberOfParameters)
+    if numberOfParametersType ~= 'number' then
+      print('Invalid argument: numberOfParameters. ' .. numberOfParametersType .. ' given instead of number.')
+      return
+    end
 
-local function noOperation()
+    local numberOfParametersPassed = 0
+    local arguments = {}
 
-end
+    local curriedFunction
+    curriedFunction = function(...)
+      local passedArguments = { ... }
+      numberOfParametersPassed = numberOfParametersPassed + #passedArguments
+      Array.append(arguments, passedArguments)
+      if numberOfParametersPassed == numberOfParameters then
+        return fn(unpack(arguments))
+      else
+        return curriedFunction
+      end
+    end
 
-local function identity(value)
-  return value
-end
+    return curriedFunction
+  end
 
-local function alwaysTrue()
-  return true
-end
+  function Function.noOperation()
 
-local function isTrue(value)
-  return not not value
-end
+  end
 
-local function returnValue(value)
-  return function()
+  function Function.identity(value)
     return value
   end
-end
 
-local function once(fn)
-  local hasBeenRun = false
-  return function(...)
-    if not hasBeenRun then
-      hasBeenRun = true
-      return fn(...)
+  function Function.alwaysTrue()
+    return true
+  end
+
+  function Function.isTrue(value)
+    return not not value
+  end
+
+  function Function.returnValue(value)
+    return function()
+      return value
     end
   end
-end
 
-local function alwaysFalse()
-  return false
-end
+  function Function.once(fn)
+    local hasBeenRun = false
+    return function(...)
+      if not hasBeenRun then
+        hasBeenRun = true
+        return fn(...)
+      end
+    end
+  end
 
-Function = {
-  partial = partial,
-  curry = curry,
-  noOperation = noOperation,
-  identity = identity,
-  alwaysTrue = alwaysTrue,
-  isTrue = isTrue,
-  returnValue = returnValue,
-  once = once,
-  alwaysFalse = alwaysFalse
-}
+  function Function.alwaysFalse()
+    return false
+  end
+end

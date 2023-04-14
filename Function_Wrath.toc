@@ -2,5 +2,6 @@
 ## Interface: 30400
 ## Dependencies: Array
 ## Version: 1.0.0
+## OptionalDeps: Library
 
 Function.lua
