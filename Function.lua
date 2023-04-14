@@ -72,4 +72,10 @@ if (_G.Library and not Library.isRegistered(addOnName, version)) or not _G.Libra
   function Function.alwaysFalse()
     return false
   end
+
+  if _G.Library then
+    Library.register(addOnName, version, Function)
+  else
+    _G.Function = Function
+  end
 end
