@@ -1,6 +1,5 @@
 ## Title: Function
-## Interface: 100007
-## Version: 1.0.0
-## OptionalDeps: Library, Array
+## Interface: 100105
+## Version: 2.0.0
 
 Function.xml

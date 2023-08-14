@@ -2,6 +2,6 @@
   "name": "Function",
   "dependencies": {
     "Library": "SanjoSolutions/LuaLibrary#v0.4.0",
-    "Array": "SanjoSolutions/LuaArray#v1.0.0"
+    "Array": "SanjoSolutions/LuaArray#v2.0.0"
   }
 }
